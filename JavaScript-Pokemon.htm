@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>pikachu</title>
+    <meta charset="utf-8">
+    <style>
+        div {
+            text-align: center;
+        }
+
+        img.pokemon {
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="display-1"></div>
+    <hr>
+    <div id="display-2"></div>
+    <hr>
+    <div id="display-3"></div>
+    <hr>
+
+    <script>
+        let pokemon1 = "pikachu.png";
+        let pokemon2 = "bulbasaur.png";
+        let pokemon3 = "charmander.png";
+        let pokemon4 = "squirtle.png";
+
+        let f1 = "<img class='pokemon' src ='" + pokemon1 + "' />";
+        let f2 = "<img class='pokemon' src ='" + pokemon2 + "' />";
+        let f3 = "<img class='pokemon' src ='" + pokemon3 + "' />";
+        let f4 = "<img class='pokemon' src ='" + pokemon4 + "' />";
+        let for1 = "";
+        let for2 = "";
+        let for3 = "";
+
+        for (i=1; i<=4; i++) {
+            
+            for1 += f1;
+        }
+
+        for (c=1; c<=16; c++) {
+
+            if (c<5) {
+            
+                for2 += f1;
+            }
+
+            else if (c<9) {
+
+                for2 += f2;
+            }
+
+            else if (c<13) {
+
+                for2 += f3;
+            }
+
+            else if (c<17) {
+
+                for2 += f4;
+            }
+
+            if (c%4==0) {
+
+                for2 += "<br>";
+            }
+            
+        }
+
+        for (d=1; d<=16; d++) {
+            
+            let x = 1 + Math.random() * 4;
+		    let y = Math.floor(x);
+            if (y==1) {
+                
+                for3 += f1;
+            }
+            else if (y==2) {
+                
+                for3 += f2;
+            }
+            else if (y==3) {
+                
+                for3 += f3;
+            }
+            else {
+
+                for3 += f4;
+            }
+            if (d%4==0) {
+
+                for3 += "<br>";
+            }
+        }
+
+        document.getElementById("display-1").innerHTML = for1;
+        document.getElementById("display-2").innerHTML = for2;
+        document.getElementById("display-3").innerHTML = for3;
+
+    </script>
+</body>
+
+</html>
